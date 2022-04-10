@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <float.h>
+
+int main() {
+    task5();
+    return 0;
+}
+
+int task5() {
+    int i = 0, amount = 0;
+    double next, min = DBL_MAX;
+    while ((scanf("%lf",&next))&(next!=EOF)){
+        i++;
+        if (next < min) {
+            amount = i - 1;
+            min = next;
+        }
+    }
+    printf("Number of elements before the first smallest element = %d \n",amount);
+    return 0;
+}

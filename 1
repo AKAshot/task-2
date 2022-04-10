@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <float.h>
+
+int main() {
+    task1();
+    return 0;
+}
+
+int task1() {
+
+    double amount, suc;
+    double sum, q;
+    sum = 0;
+
+    printf("Input amount of numbers:\n");
+    suc = scanf("%lf", &amount);
+
+    if (suc == 0 || amount < 1) {
+        printf("Wrong input.");
+        return 0;
+    }
+
+    int i;
+    for (i = 0; i < amount; i++) {
+        suc = scanf("%lf", &q);
+        if (suc == 0) {
+            printf("Wrong input.");
+            return 0;
+        }
+        sum += q;
+    }
+
+    printf("The sum is %f \n", sum);
+    return 0;
+}

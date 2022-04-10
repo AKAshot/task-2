@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <float.h>
+
+int main() {
+    task2();
+    return 0;
+}
+
+int task2() {
+
+    double k, suc, el;
+    int ans = 0;
+    printf("Input number:\n");
+    suc = scanf("%lf", &k);
+
+    if (suc == 0) {
+        printf("Wrong input.");
+        return 0;
+    }
+
+    int len = 5;
+    int i;
+    printf("Enter %d numbers: \n", len);
+    for (i = 0; i < len; i++) {
+        suc = scanf("%lf", &el);
+        if (suc == 0) {
+            printf("Wrong input.");
+            return 0;
+        }
+        if (el > k && ans == 0) {
+            ans = i + 1;
+        }
+    }
+
+    if(ans == 0) {
+        printf("There is no number bigger than %f \n", k);
+        return 0;
+    }
+    printf("%d element is the first element bigger than %f", ans, k);
+    return 0;
+}

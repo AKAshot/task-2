@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <float.h>
+
+int main() {
+    task3();
+    return 0;
+}
+
+int task3() {
+    double suc, el, pel = -DBL_MAX;
+    int i, len = 5, ans = 0;
+
+    printf("Enter %d numbers: \n", len);
+    for (i = 0; i < len; i++) {
+        suc = scanf("%lf", &el);
+        if (suc == 0) {
+            printf("Wrong input.");
+            return 0;
+        }
+        if (el < pel) {
+            ans = 1;
+        }
+        pel = el;
+    }
+    if (ans == 0) {
+        printf("This sequence increases");
+        return 0;
+    }
+
+    printf("This sequence does not increase");
+    return 0;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <float.h>
+
+int main() {
+    task8();
+    return 0;
+}
+
+int task8() {
+    int i = 0, amount = 0, next, cur;
+    printf("Enter numbers: \n");
+    while ((scanf("%d",&next))&(next!=EOF)){
+        i++;
+        if (i == 1){
+            cur = next;
+            amount = 1;
+        }
+        else {
+            if (next > cur) {
+                amount++;
+            }
+            else {
+                printf("Length of the ascending sequence is %d. \n", amount);
+                amount = 1;
+            }
+            cur = next;
+        }
+    }
+    return 0;
+}

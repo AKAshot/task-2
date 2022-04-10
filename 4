@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <float.h>
+
+int main() {
+    task4();
+    return 0;
+}
+
+int task4() {
+    int i = 0, amount = 0;
+    double cur, next;
+    printf("Enter numbers: \n");
+    while ((scanf("%lf",&next))&(next!=EOF)){
+        i++;
+        if (i == 1){
+            cur = next;
+        }
+        else {
+            if (next < cur) {
+                printf("Element number %d is smaller than its left neighbor \n",i);
+                amount++;
+            }
+            cur = next;
+        }
+    }
+    printf("Number of elements more than their left neighbor = %d",amount);
+    return 0;
+}
